@@ -27,7 +27,7 @@
     "express": "^3.5.1",
     "url": "^0.7.9",
     "redis": "^0.10.1",
-    "npm-package-search": "git+https://github.com/psychobunny/npm-package-search.git",
+    "npm-package-search": "^0.1.0",
     "path": "^0.4.9",
     "templates.js": "0.0.3",
     "async": "^0.6.2",
