@@ -1,0 +1,4 @@
+#!/bin/bash
+clear
+echo "Launching supervisor..."
+supervisor --extensions 'node|js|tpl|css' index

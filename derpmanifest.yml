@@ -1,0 +1,17 @@
+---
+applications:
+  .:
+    name: npm
+    framework:
+      name: node
+      info:
+        mem: 64M
+        description: Node.js Application
+        exec: 
+    infra: aws
+    url: ${name}.${target-base}
+    mem: 64M
+    instances: 1
+    services:
+      redis-c6d01:
+        type: redis

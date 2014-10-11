@@ -1,0 +1,41 @@
+{
+  "name": "nodebb-package-manager",
+  "version": "0.0.0",
+  "description": "Package manager for NodeBB themes and plugins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/designcreateplay/nodebb-package-manager"
+  },
+  "keywords": [
+    "nodebb",
+    "package",
+    "manager",
+    "themes",
+    "plugins"
+  ],
+  "author": "psychobunny",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/designcreateplay/nodebb-package-manager/issues"
+  },
+  "homepage": "https://github.com/designcreateplay/nodebb-package-manager",
+  "dependencies": {
+    "express": "^3.5.1",
+    "url": "^0.7.9",
+    "redis": "^0.10.1",
+    "npm-package-search": "git+https://github.com/psychobunny/npm-package-search.git",
+    "path": "^0.4.9",
+    "templates.js": "0.0.3",
+    "async": "^0.6.2",
+    "nconf": "^0.6.9",
+    "passport": "^0.2.0",
+    "passport-github": "^0.1.5",
+    "connect-redis": "^1.5.0",
+    "express-session": "^1.0.2",
+    "request": "^2.34.0"
+  }
+}
