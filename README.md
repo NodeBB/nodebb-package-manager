@@ -5,6 +5,7 @@
 First install the CLI:
 https://docs.appfog.com/getting-started/af-cli
 
+Delete lib/npm.json first, and then run this file locally... Our AppFog instance doesn't have enough RAM to pull from NPM (once we do, then add this file to manifest.yml)
 
 Open Ruby Command Prompt:
 
