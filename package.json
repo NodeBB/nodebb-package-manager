@@ -4,7 +4,7 @@
   "description": "Package manager for NodeBB themes and plugins",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=development node index.js"
   },
   "repository": {
     "type": "git",
