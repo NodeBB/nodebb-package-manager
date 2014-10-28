@@ -24,18 +24,19 @@
   },
   "homepage": "https://github.com/designcreateplay/nodebb-package-manager",
   "dependencies": {
-    "express": "^3.5.1",
-    "url": "^0.7.9",
-    "redis": "^0.10.1",
-    "npm-package-search": "^0.1.0",
-    "path": "^0.4.9",
-    "templates.js": "0.0.3",
     "async": "^0.6.2",
+    "connect-redis": "^1.5.0",
+    "express": "^3.5.1",
+    "express-session": "^1.0.2",
     "nconf": "^0.6.9",
+    "npm-package-search": "^0.1.0",
     "passport": "^0.2.0",
     "passport-github": "^0.1.5",
-    "connect-redis": "^1.5.0",
-    "express-session": "^1.0.2",
-    "request": "^2.34.0"
+    "path": "^0.4.9",
+    "redis": "^0.10.1",
+    "request": "http://registry.npmjs.org/request/-/request-2.34.0.tgz",
+    "semver": "^4.1.0",
+    "templates.js": "0.0.3",
+    "url": "^0.7.9"
   }
 }
