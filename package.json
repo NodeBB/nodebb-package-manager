@@ -40,7 +40,7 @@
     "redis": "^0.10.1",
     "request": "http://registry.npmjs.org/request/-/request-2.34.0.tgz",
     "semver": "^4.1.0",
-    "templates.js": "0.0.3",
+    "templates.js": "^0.1.4",
     "url": "^0.7.9"
   }
 }
