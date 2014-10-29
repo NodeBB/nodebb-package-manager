@@ -846,9 +846,9 @@
       "resolved": "https://registry.npmjs.org/semver/-/semver-4.1.0.tgz"
     },
     "templates.js": {
-      "version": "0.0.3",
-      "from": "templates.js@0.0.3",
-      "resolved": "https://registry.npmjs.org/templates.js/-/templates.js-0.0.3.tgz"
+      "version": "0.1.4",
+      "from": "templates.js@latest",
+      "resolved": "https://registry.npmjs.org/templates.js/-/templates.js-0.1.4.tgz"
     },
     "url": {
       "version": "0.7.9",
