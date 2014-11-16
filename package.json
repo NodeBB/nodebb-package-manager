@@ -32,6 +32,7 @@
     "csurf": "^1.6.2",
     "express": "^4.10.0",
     "express-session": "^1.0.2",
+    "lru-cache": "^2.5.0",
     "nconf": "^0.6.9",
     "npm-package-search": "^0.1.0",
     "passport": "^0.2.0",
