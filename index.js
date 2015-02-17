@@ -15,7 +15,7 @@ require('./lib/routes')(app, middleware, controllers);
 
 winston.info('NodeBB Package Manager - Initializing');
 
-new cronJob('0 0 * * * *', packages.registry.sync, null, true);
+new cronJob('0 * * * *', packages.registry.sync, null, true);
 
 app.listen(process.env.PORT || 3000);
 console.log('NodeBB Package Manager - Ready');
