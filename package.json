@@ -29,6 +29,7 @@
     "compression": "^1.2.0",
     "connect-redis": "^1.5.0",
     "cookie-parser": "^1.3.3",
+    "cron": "^1.0.6",
     "csurf": "^1.6.2",
     "express": "^4.10.0",
     "express-session": "^1.0.2",
@@ -37,11 +38,10 @@
     "npm-package-search": "^0.1.0",
     "passport": "^0.2.0",
     "passport-github": "^0.1.5",
-    "path": "^0.4.9",
     "redis": "^0.10.1",
     "request": "http://registry.npmjs.org/request/-/request-2.34.0.tgz",
     "semver": "^4.1.0",
     "templates.js": "^0.1.4",
-    "url": "^0.7.9"
+    "winston": "^0.9.0"
   }
 }

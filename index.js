@@ -1,21 +1,21 @@
-"use strict";
+'use strict';
+/* globals require */
 
 var express = require('express'),
+	cronJob = require('cron').CronJob,
+	winston = require('winston'),
 	app = express(),
-	search = require('./lib/search'),
+	// search = require('./lib/search'),
+	packages = require('./lib/packages'),
 	middleware = require('./lib/middleware')(app),
 	controllers = require('./lib/controllers');
 
 
 require('./lib/routes')(app, middleware, controllers);
 
-console.log('NodeBB Package Manager - Initializing');
+winston.info('NodeBB Package Manager - Initializing');
 
-search('nodebb-', function (err, data) {
-	if (err) {
-		throw new Error(err);
-	}
+new cronJob('0 0 * * * *', packages.registry.sync, null, true);
 
-	app.listen(process.env.PORT || 3000);
-	console.log('NodeBB Package Manager - Ready');
-});
+app.listen(process.env.PORT || 3000);
+console.log('NodeBB Package Manager - Ready');
