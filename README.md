@@ -1,26 +1,10 @@
 ## NodeBB Package Manager
 
-## How to push 
+The NodeBB Package Manager functions as a directory/index for every plugin that is published to npm.
 
-First install the CLI:
-https://docs.appfog.com/getting-started/af-cli
+The front-end interface is deprecated (though still runs), and the API is referenced by all NodeBBs to determine what packages are available and installable.
 
-Delete lib/npm.json first, and then run this file locally... Our AppFog instance doesn't have enough RAM to pull from NPM (once we do, then add this file to manifest.yml)
+## Caveat Emptor
 
-Open Ruby Command Prompt:
-
-```
-af login rodrigues.andrew@gmail.com / our standard pw with numbers and letters
-af update psychobunny
-```
-
-(Obviously, don't forget to test because then all NodeBBs will explode :P)
-
-## Compiling on Windows
-
-Delete these folders:
-
-```
-\node_modules\npm-package-sync\node_modules\request\node_modules\form-data\node_modules\combined-stream\test
-\node_modules\npm-package-sync\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\
-```
+NodeBB Inc., NodeBB, and all of its contributors are not responsible for the content of any plugins published. You are advised to inspect the source code of
+any plugins you wish to install, in order to determine it's safety.
