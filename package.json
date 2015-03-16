@@ -39,7 +39,7 @@
     "passport": "^0.2.0",
     "passport-github": "^0.1.5",
     "redis": "^0.10.1",
-    "request": "http://registry.npmjs.org/request/-/request-2.34.0.tgz",
+    "request": "http://registry.npmjs.com/request/-/request-2.34.0.tgz",
     "semver": "^4.1.0",
     "templates.js": "^0.1.4",
     "winston": "^0.9.0"

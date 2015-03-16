@@ -27,7 +27,7 @@
 <div class="discover leaderboard">
 	<!-- BEGIN packages -->
 	<div class="well">
-		<strong><a href="https://npmjs.org/package/{packages.name}" target="_blank">{packages.name} <small><i class="fa fa-external-link"></i></small></a></strong><br /><small>{packages.description}</small><br /><br />
+		<strong><a href="https://npmjs.com/package/{packages.name}" target="_blank">{packages.name} <small><i class="fa fa-external-link"></i></small></a></strong><br /><small>{packages.description}</small><br /><br />
 		<div class="pull-right">
 			<!-- BEGIN tags -->
 			<span class="label label-success tag label-{packages.tags.name}" data-tag="{packages.tags.name}"><small>{packages.tags.name}</small></span>
