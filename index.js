@@ -9,8 +9,6 @@ var express = require('express'),
 	packages = require('./lib/packages'),
 	controllers = require('./lib/controllers');
 
-require('./lib/middleware')(app);
-
 require('./lib/routes')(app, controllers);
 
 winston.info('NodeBB Package Manager - Initializing');
