@@ -6,9 +6,17 @@ var express = require('express'),
 	winston = require('winston'),
 	rdb = require('./lib/redis'),
 	app = express(),
-	// search = require('./lib/search'),
 	packages = require('./lib/packages'),
-	controllers = require('./lib/controllers');
+	controllers = require('./lib/controllers'),
+
+	requiredEnv = ['GITHUB_TOKEN', 'GITHUB_USER_AGENT'];
+
+if (!requiredEnv.every(function(key) {
+	return process.env.hasOwnProperty(key);
+})) {
+	winston.error('[init] Required environment variables not found, please consult launch.template file');
+	return process.exit(1);
+}
 
 require('./lib/routes')(app, controllers);
 

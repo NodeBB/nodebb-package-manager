@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export REDISDB=
+
+export GITHUB_TOKEN=
+export GITHUB_USER_AGENT=
+
+node index.js
