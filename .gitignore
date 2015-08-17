@@ -13,3 +13,4 @@ provision.sh
 *.komodoproject
 .DS_Store
 lib/npm.json
+launch
