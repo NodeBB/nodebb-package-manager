@@ -22,7 +22,9 @@ winston.info('NodeBB Package Manager - Ready');
 // Check packaged sorted set. If missing, conduct initial sync
 rdb.zcard('packages', function(err, numPackages) {
 	if (numPackages === 0) {
-		winston.info('No packages detected in database, running initial sync');
+		winston.info('[init] No packages detected in database, running initial sync');
 		packages.registry.sync(true);
+	} else {
+		winston.info('[init] Managing ' + numPackages + ' packages');
 	}
 });
