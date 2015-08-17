@@ -1,4 +1,0 @@
-#!/bin/sh
-clear
-echo "Launching supervisor..."
-NODE_ENV=development supervisor --extensions 'node|js|tpl|css' index
