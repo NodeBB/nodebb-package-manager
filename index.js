@@ -22,7 +22,9 @@ require('./lib/routes')(app, controllers);
 
 winston.info('NodeBB Package Manager - Initializing');
 
-new cronJob('0 * * * *', packages.registry.sync, null, true);
+new cronJob('0 0 * * *', function() {
+	packages.registry.sync(true);	// Sync daily, instead
+}, null, true);
 
 app.listen(process.env.PORT || 3000);
 winston.info('NodeBB Package Manager - Ready');
