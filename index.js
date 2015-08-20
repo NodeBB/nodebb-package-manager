@@ -20,11 +20,18 @@ if (!requiredEnv.every(function(key) {
 
 require('./lib/routes')(app, controllers);
 
+winston.remove(winston.transports.Console);
+winston.add(winston.transports.Console, {
+	colorize: true,
+	level: process.env.NODE_ENV === 'production' ? 'info' : 'verbose'
+});
+
 winston.info('NodeBB Package Manager - Initializing');
 
 new cronJob('0 0 * * *', packages.registry.sync, null, true);
 
 app.listen(process.env.PORT || 3000);
+
 winston.info('NodeBB Package Manager - Ready');
 
 // Check packaged sorted set. If missing, conduct initial sync
