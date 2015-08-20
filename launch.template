@@ -1,8 +1,19 @@
 #!/bin/bash
 
-export REDISDB=
+export NODE_ENV=development
 
 export GITHUB_TOKEN=
 export GITHUB_USER_AGENT=
+
+# ===================
+# VALUES BELOW THIS LINE ARE OPTIONAL
+# ===================
+
+export REDISDB=
+
+# "seq" is the revision number from npm. nbbpm uses it to keep itself up to
+# date, and stores this value in the local redis database. If it is not present
+# (e.g. on initial install), it will read the value from here.
+export NPM_LAST_SEQ=
 
 node index.js

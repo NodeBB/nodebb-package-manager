@@ -28,18 +28,26 @@ winston.add(winston.transports.Console, {
 
 winston.info('NodeBB Package Manager - Initializing');
 
-new cronJob('0 0 * * *', packages.registry.sync, null, true);
+new cronJob('0 * * * *', packages.registry.sync, null, true);
 
 app.listen(process.env.PORT || 3000);
 
 winston.info('NodeBB Package Manager - Ready');
 
 // Check packaged sorted set. If missing, conduct initial sync
-rdb.zcard('packages', function(err, numPackages) {
-	if (numPackages === 0) {
-		winston.info('[init] No packages detected in database, running initial sync');
-		packages.registry.sync(true);
-	} else {
-		winston.info('[init] Managing ' + numPackages + ' packages');
+packages.registry.init(function(err) {
+	if (err) {
+		winston.error('[init] Could not initialise registry.');
+		winston.error('[init] ' + err.message);
+		return process.exit(1);
 	}
+
+	rdb.zcard('packages', function(err, numPackages) {
+		if (numPackages === 0) {
+			winston.info('[init] No packages detected in database, running initial sync');
+			packages.registry.sync(true);
+		} else {
+			winston.info('[init] Managing ' + numPackages + ' packages');
+		}
+	});
 });
