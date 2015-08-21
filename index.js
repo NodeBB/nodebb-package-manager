@@ -7,6 +7,7 @@ var express = require('express'),
 	rdb = require('./lib/redis'),
 	app = express(),
 	packages = require('./lib/packages'),
+	analytics = require('./lib/analytics'),
 	controllers = require('./lib/controllers'),
 
 	requiredEnv = ['GITHUB_TOKEN', 'GITHUB_USER_AGENT'];
@@ -29,6 +30,8 @@ winston.add(winston.transports.Console, {
 winston.info('NodeBB Package Manager - Initializing');
 
 new cronJob('0 * * * *', packages.registry.sync, null, true);
+
+analytics.init();
 
 app.listen(process.env.PORT || 3000);
 

@@ -16,4 +16,8 @@ export REDISDB=
 # (e.g. on initial install), it will read the value from here.
 export NPM_LAST_SEQ=
 
+# How often the collated analytics will persist to disk (acceptable values are:
+# 2, 3, 4, 5, 6, 10, 12, and 15). Default is 10.
+export ANALYTICS_PERSIST_FREQ=
+
 node index.js
