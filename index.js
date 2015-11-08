@@ -4,6 +4,7 @@
 var express = require('express'),
 	cronJob = require('cron').CronJob,
 	winston = require('winston'),
+	templates = require('templates.js'),
 	rdb = require('./lib/redis'),
 	app = express(),
 	packages = require('./lib/packages'),
@@ -32,6 +33,11 @@ winston.info('NodeBB Package Manager - Initializing');
 new cronJob('0 * * * *', packages.registry.sync, null, true);
 
 analytics.init();
+
+// Templates.js
+app.engine('tpl', templates.__express);
+app.set('view engine', 'tpl');
+app.set('views', 'views');
 
 app.listen(process.env.PORT || 3000);
 

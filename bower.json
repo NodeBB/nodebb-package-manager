@@ -1,0 +1,29 @@
+{
+  "name": "nodebb-package-manager",
+  "description": "Package manager for NodeBB themes and plugins",
+  "main": "index.js",
+  "authors": [
+    "psychobunny"
+  ],
+  "license": "GPLv3",
+  "keywords": [
+    "nodebb",
+    "package",
+    "manager",
+    "themes",
+    "plugins"
+  ],
+  "homepage": "https://github.com/NodeBB/nodebb-package-manager",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Chart.js": "~1.0.2"
+  }
+}
