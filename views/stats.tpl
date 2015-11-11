@@ -8,6 +8,23 @@
 	<meta name="author" content="">
 
 	<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
+	<style>
+		.line-legend {
+			position: absolute;
+			list-style-type: none;
+			padding: 0.5rem 1rem;
+			margin-left: 40px;
+			border: 1px solid #ddd;
+			top: 2rem;
+		}
+
+		.line-legend span {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin-right: 1rem;
+		}
+	</style>
 
 	<title>NodeBB Package Manager Statistics</title>
 </head>
@@ -93,6 +110,10 @@
 				labels: labels,
 				datasets: data
 			});
+
+			var legend = charts.index.generateLegend();
+			console.log(legend);
+			$('[data-chart="index"]').before(legend);
 		});
 
 		function fixWidths() {
