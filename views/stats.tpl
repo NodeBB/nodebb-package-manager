@@ -63,10 +63,11 @@
 			labels.push(tmp + mer);
 		}
 
+		// Figure 1
 		$.ajax({
 			url: '/api/v1/analytics/index'
 		}).success(function(data) {
-			contexts.index.canvas.width = $('[data-chart="index"]').parent().width();
+			fixWidths();
 
 			data[0].fillColor = "rgba(220,220,220,0.2)";
 			data[0].strokeColor = "rgba(220,220,220,1)";
@@ -94,6 +95,13 @@
 				datasets: data
 			});
 		});
+
+		function fixWidths() {
+			$('[data-chart]').each(function(idx, el) {
+				var attr = el.getAttribute('data-chart');
+				contexts[attr].canvas.width = $(el).parent().width();
+			});
+		}
 	</script>
 </body>
 </html>
