@@ -69,7 +69,12 @@
 			data[1].pointColor = "rgba(151,187,205,1)";
 			data[1].pointStrokeColor = "#fff";
 			data[1].pointHighlightFill = "#fff";
-			data[1].pointHighlightStroke = "rgba(151,187,205,1)";
+			data[2].pointHiColor = "rgba(187,205,151,0.2)";
+			data[2].strokeColor = "rgba(187,205,151,1)";
+			data[2].pointColor = "rgba(187,205,151,1)";
+			data[2].pointStrokeColor = "#fff";
+			data[2].pointHighlightFill = "#fff";
+			data[2].pointHighlightStroke = "rgba(187,205,151,1)";
 
 			charts.index = new Chart(contexts.index).Line({
 				labels: labels,

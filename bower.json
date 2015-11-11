@@ -24,6 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "Chart.js": "~1.0.2"
+    "Chart.js": "~1.0.2",
+    "bootstrap": "~3.3.5"
   }
 }
