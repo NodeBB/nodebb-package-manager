@@ -22,15 +22,22 @@
 					are made to various endpoints. As a matter of transparency, these results
 					are shared with you here.
 				</p>
+				<p>
+					The current server time is: {serverTime}
+				</p>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="col-xs-12">
 				<canvas data-chart="index" width="800" height="400"></canvas>
 				<p>
 					<strong>Figure 1</strong><br />
-					Queries to retrieve plugin list, by version number.
+					Queries to retrieve plugin list, by version number, for the past 24 hours.
 				</p>
+			</div>
+		</div>
+		<div class"row">
+			<div class="col-xs-12 col-sm-6 col-md-4">
 			</div>
 		</div>
 	</div>
@@ -50,26 +57,32 @@
 
 		// Construct labels
 		hour.setHours(hour.getHours(), 0, 0, 0);
-		for(var x=0,tmp;x<24;x++) {
-			tmp = hour.getTime() - (x * 1000 * 60 * 60);
-			labels.push(new Date(tmp).getHours());
+		for(var x=0,tmp,mer;x<24;x++) {
+			tmp = new Date(hour.getTime() - (x * 1000 * 60 * 60)).getHours();
+			mer = tmp >= 12 ? 'pm' : 'am';
+			labels.push(tmp + mer);
 		}
 
 		$.ajax({
 			url: '/api/v1/analytics/index'
 		}).success(function(data) {
+			contexts.index.canvas.width = $('[data-chart="index"]').parent().width();
+
 			data[0].fillColor = "rgba(220,220,220,0.2)";
 			data[0].strokeColor = "rgba(220,220,220,1)";
 			data[0].pointColor = "rgba(220,220,220,1)";
 			data[0].pointStrokeColor = "#fff";
 			data[0].pointHighlightFill = "#fff";
 			data[0].pointHighlightStroke = "rgba(220,220,220,1)";
+
 			data[1].fillColor = "rgba(151,187,205,0.2)";
 			data[1].strokeColor = "rgba(151,187,205,1)";
 			data[1].pointColor = "rgba(151,187,205,1)";
 			data[1].pointStrokeColor = "#fff";
 			data[1].pointHighlightFill = "#fff";
-			data[2].pointHiColor = "rgba(187,205,151,0.2)";
+			data[0].pointHighlightStroke = "rgba(151,187,205,1)";
+
+			data[2].fillColor = "rgba(187,205,151,0.2)";
 			data[2].strokeColor = "rgba(187,205,151,1)";
 			data[2].pointColor = "rgba(187,205,151,1)";
 			data[2].pointStrokeColor = "#fff";
