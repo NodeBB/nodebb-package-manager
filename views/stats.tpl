@@ -57,10 +57,9 @@
 
 		// Construct labels
 		hour.setHours(hour.getHours(), 0, 0, 0);
-		for(var x=0,tmp,mer;x<24;x++) {
+		for(var x=23,tmp,mer;x>=0;x--) {
 			tmp = new Date(hour.getTime() - (x * 1000 * 60 * 60)).getHours();
-			mer = tmp >= 12 ? 'pm' : 'am';
-			labels.push(tmp + mer);
+			labels.push(tmp + ':00');
 		}
 
 		// Figure 1
