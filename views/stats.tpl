@@ -24,6 +24,23 @@
 			height: 10px;
 			margin-right: 1rem;
 		}
+
+		.chart-block p {
+			font-size: 1.2rem;
+		}
+
+		.plugin-list h3 {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		.plugin-list h4 {
+			font-size: 1.3rem;
+		}
+
+		.plugin-list p {
+			font-size: 1.2rem;
+		}
 	</style>
 
 	<title>NodeBB Package Manager Statistics</title>
@@ -45,7 +62,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-12 chart-block">
 				<canvas data-chart="index" width="800" height="400"></canvas>
 				<p>
 					<strong>Figure 1</strong><br />
@@ -55,6 +72,37 @@
 		</div>
 		<div class"row">
 			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div style="width: 100%; height: 60px; border: 2px dashed #aaa;">
+					<p class="text-center" style="line-height: 60px;">
+						<em>To be announced...</em>
+					</p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div style="width: 100%; height: 60px; border: 2px dashed #aaa;">
+					<p class="text-center" style="line-height: 60px;">
+						<em>To be announced...</em>
+					</p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="panel panel-default plugin-list">
+					<div class="panel-heading">
+						<h3 class="panel-title">Recently Added/Updated</h3>
+					</div>
+					<div class="panel-body">
+						<!-- BEGIN latest -->
+						<div class="media">
+							<div class="media-body">
+								<h4 class="media-heading"><a href="{../url}">{../name}</a></h4>
+								<p>{../description}</p>
+							</div>
+						</div>
+						<!-- END latest -->
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
