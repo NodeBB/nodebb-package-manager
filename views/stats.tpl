@@ -18,7 +18,15 @@
 			top: 2rem;
 		}
 
-		.line-legend span {
+		.pie-legend {
+			list-style-type: none;
+			padding: 0.5rem 1rem;
+			margin-left: 40px;
+			border: 1px solid #ddd;
+			margin-left: 0px;
+		}
+
+		.line-legend span, .pie-legend span {
 			display: inline-block;
 			width: 10px;
 			height: 10px;
@@ -71,12 +79,12 @@
 			</div>
 		</div>
 		<div class"row">
-			<div class="col-xs-12 col-sm-6 col-md-4">
-				<div style="width: 100%; height: 60px; border: 2px dashed #aaa;">
-					<p class="text-center" style="line-height: 60px;">
-						<em>To be announced...</em>
-					</p>
-				</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 chart-block">
+				<canvas data-chart="top/week" width="400" height="400"></canvas>
+				<p>
+					<strong>Figure 2</strong><br />
+					Top plugin downloads in the past 7 days
+				</p>
 			</div>
 
 			<div class="col-xs-12 col-sm-6 col-md-4">
@@ -114,7 +122,8 @@
 	<script src="/vendor/Chart.js/Chart.min.js"></script>
 	<script>
 		var contexts = {
-				index: $('[data-chart="index"]').get(0).getContext('2d')
+				index: $('[data-chart="index"]').get(0).getContext('2d'),
+				'top/week': $('[data-chart="top/week"]').get(0).getContext('2d')
 			},
 			charts = {
 				index: undefined
@@ -129,12 +138,12 @@
 			labels.push(tmp + ':00');
 		}
 
+		fixWidths();
+
 		// Figure 1
 		$.ajax({
 			url: '/api/v1/analytics/index'
 		}).success(function(data) {
-			fixWidths();
-
 			data[0].fillColor = "rgba(220,220,220,0.2)";
 			data[0].strokeColor = "rgba(220,220,220,1)";
 			data[0].pointColor = "rgba(220,220,220,1)";
@@ -162,14 +171,34 @@
 			});
 
 			var legend = charts.index.generateLegend();
-			console.log(legend);
 			$('[data-chart="index"]').before(legend);
+		});
+
+		// Figure 2
+		$.ajax({
+			url: '/api/v1/analytics/top/week'
+		}).success(function(data) {
+			var colours = ['#F44336', '#2196F3', '#4CAF50', '#ffc107', '#e91e63'],
+				highlights = ['#EF5350', '#42A5F5', '#66BB6A', '#ffca28', '#ec407a'];
+
+			charts['top/week'] = new Chart(contexts['top/week']).Pie(data.map(function(set, idx) {
+				set.color = colours[idx];
+				set.highlight = highlights[idx];
+				return set;
+			}));
+
+			var legend = charts['top/week'].generateLegend();
+			$('[data-chart="top/week"]').after(legend);
 		});
 
 		function fixWidths() {
 			$('[data-chart]').each(function(idx, el) {
 				var attr = el.getAttribute('data-chart');
 				contexts[attr].canvas.width = $(el).parent().width();
+
+				if (attr === 'top/week') {
+					contexts[attr].canvas.height = $(el).parent().width();
+				}
 			});
 		}
 	</script>
