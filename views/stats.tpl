@@ -96,7 +96,9 @@
 						<!-- BEGIN latest -->
 						<div class="media">
 							<div class="media-body">
-								<h4 class="media-heading"><a href="{../url}">{../name}</a></h4>
+								<h4 class="media-heading">
+									<!-- IF ../url --><a href="{../url}">{../name}</a><!-- ELSE -->{../name}<!-- ENDIF ../url -->
+								</h4>
 								<p>{../description}</p>
 							</div>
 						</div>
