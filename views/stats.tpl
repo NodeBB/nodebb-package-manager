@@ -87,12 +87,12 @@
 				</p>
 			</div>
 
-			<div class="col-xs-12 col-sm-6 col-md-4">
-				<div style="width: 100%; height: 60px; border: 2px dashed #aaa;">
-					<p class="text-center" style="line-height: 60px;">
-						<em>To be announced...</em>
-					</p>
-				</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 chart-block">
+				<canvas data-chart="top/all" width="400" height="400"></canvas>
+				<p>
+					<strong>Figure 3</strong><br />
+					Top plugin downloads of all time
+				</p>
 			</div>
 
 			<div class="col-xs-12 col-sm-6 col-md-4">
@@ -123,7 +123,8 @@
 	<script>
 		var contexts = {
 				index: $('[data-chart="index"]').get(0).getContext('2d'),
-				'top/week': $('[data-chart="top/week"]').get(0).getContext('2d')
+				'top/week': $('[data-chart="top/week"]').get(0).getContext('2d'),
+				'top/all': $('[data-chart="top/all"]').get(0).getContext('2d')
 			},
 			charts = {
 				index: undefined
@@ -191,12 +192,29 @@
 			$('[data-chart="top/week"]').after(legend);
 		});
 
+		// Figure 3
+		$.ajax({
+			url: '/api/v1/analytics/top/all'
+		}).success(function(data) {
+			var colours = ['#F44336', '#2196F3', '#4CAF50', '#ffc107', '#e91e63'],
+				highlights = ['#EF5350', '#42A5F5', '#66BB6A', '#ffca28', '#ec407a'];
+
+			charts['top/all'] = new Chart(contexts['top/all']).Pie(data.map(function(set, idx) {
+				set.color = colours[idx];
+				set.highlight = highlights[idx];
+				return set;
+			}));
+
+			var legend = charts['top/all'].generateLegend();
+			$('[data-chart="top/all"]').after(legend);
+		});
+
 		function fixWidths() {
 			$('[data-chart]').each(function(idx, el) {
 				var attr = el.getAttribute('data-chart');
 				contexts[attr].canvas.width = $(el).parent().width();
 
-				if (attr === 'top/week') {
+				if (attr === 'top/week' || attr === 'top/all') {
 					contexts[attr].canvas.height = $(el).parent().width();
 				}
 			});
