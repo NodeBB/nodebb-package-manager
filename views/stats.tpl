@@ -91,7 +91,7 @@
 				<canvas data-chart="top/all" width="400" height="400"></canvas>
 				<p>
 					<strong>Figure 3</strong><br />
-					Top plugin downloads of all time
+					Top plugin downloads of since November 2015
 				</p>
 			</div>
 
