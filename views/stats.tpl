@@ -196,8 +196,8 @@
 		$.ajax({
 			url: '/api/v1/analytics/top/all'
 		}).success(function(data) {
-			var colours = ['#F44336', '#2196F3', '#4CAF50', '#ffc107', '#e91e63'],
-				highlights = ['#EF5350', '#42A5F5', '#66BB6A', '#ffca28', '#ec407a'];
+			var colours = ['#F44336', '#2196F3', '#4CAF50', '#ffc107', '#e91e63', '#9C27B0', '#009688', '#CDDC39', '#795548', '#3F51B5'],
+				highlights = ['#EF5350', '#42A5F5', '#66BB6A', '#ffca28', '#ec407a', '#AB47BC', '#26A69A', '#D4E157', '#8D6E63', '#5C6BC0'];
 
 			charts['top/all'] = new Chart(contexts['top/all']).Pie(data.map(function(set, idx) {
 				set.color = colours[idx];
