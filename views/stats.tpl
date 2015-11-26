@@ -83,7 +83,7 @@
 				<canvas data-chart="top/week" width="400" height="400"></canvas>
 				<p>
 					<strong>Figure 2</strong><br />
-					Top plugin downloads in the past 7 days
+					Top 5 plugin downloads in the past 7 days
 				</p>
 			</div>
 
@@ -91,7 +91,7 @@
 				<canvas data-chart="top/all" width="400" height="400"></canvas>
 				<p>
 					<strong>Figure 3</strong><br />
-					Top plugin downloads of since November 2015
+					Top 10 plugin downloads of since November 2015
 				</p>
 			</div>
 
