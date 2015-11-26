@@ -38,6 +38,7 @@ analytics.init();
 app.engine('tpl', templates.__express);
 app.set('view engine', 'tpl');
 app.set('views', 'views');
+app.enable('trust proxy');
 
 app.listen(process.env.PORT || 3000);
 
