@@ -65,7 +65,7 @@
 					are made to various endpoints. As a matter of transparency, these results
 					are shared with you here.
 				</p>
-				<p>
+				<p class="alert alert-info">
 					The current server time is: {serverTime}
 				</p>
 			</div>
