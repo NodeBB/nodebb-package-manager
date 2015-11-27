@@ -101,20 +101,28 @@
 			</div>
 
 			<div class="col-xs-12 col-sm-6 col-md-4 chart-block">
-				<table class="table table-striped">
-					<thead>
-						<th>Country</th>
-						<th></th>
-					</thead>
-					<tbody>
-						<!-- BEGIN geo -->
-						<tr>
-							<td>{../country}</td>
-							<td>{../count}</td>
-						</tr>
-						<!-- END geo -->
-					</tbody>
-				</table>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<table class="table table-striped">
+							<thead>
+								<th>Country</th>
+								<th></th>
+							</thead>
+							<tbody>
+								<!-- BEGIN geo -->
+								<tr>
+									<td>{../country}</td>
+									<td>{../count}</td>
+								</tr>
+								<!-- END geo -->
+							</tbody>
+						</table>
+						<p>
+							<strong>Table 1</strong><br />
+							Number of requests by country, within the past 48 hours
+						</p>
+					</div>
+				</div>
 			</div>
 
 			<div class="col-xs-12 col-sm-6 col-md-4">
