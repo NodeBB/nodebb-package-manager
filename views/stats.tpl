@@ -80,19 +80,41 @@
 		</div>
 		<div class"row">
 			<div class="col-xs-12 col-sm-6 col-md-4 chart-block">
-				<canvas data-chart="top/week" width="400" height="400"></canvas>
-				<p>
-					<strong>Figure 2</strong><br />
-					Top 5 plugin downloads in the past 7 days
-				</p>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<canvas data-chart="top/week" width="400" height="400"></canvas>
+						<p>
+							<strong>Figure 2</strong><br />
+							Top 5 plugin downloads in the past 7 days
+						</p>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<canvas data-chart="top/all" width="400" height="400"></canvas>
+						<p>
+							<strong>Figure 3</strong><br />
+							Top 10 plugin downloads of since November 2015
+						</p>
+					</div>
+				</div>
 			</div>
 
 			<div class="col-xs-12 col-sm-6 col-md-4 chart-block">
-				<canvas data-chart="top/all" width="400" height="400"></canvas>
-				<p>
-					<strong>Figure 3</strong><br />
-					Top 10 plugin downloads of since November 2015
-				</p>
+				<table class="table table-striped">
+					<thead>
+						<th>Country</th>
+						<th></th>
+					</thead>
+					<tbody>
+						<!-- BEGIN geo -->
+						<tr>
+							<td>{../country}</td>
+							<td>{../count}</td>
+						</tr>
+						<!-- END geo -->
+					</tbody>
+				</table>
 			</div>
 
 			<div class="col-xs-12 col-sm-6 col-md-4">
