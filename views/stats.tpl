@@ -8,6 +8,7 @@
 	<meta name="author" content="">
 
 	<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/public/bootswatch-yeti.css" />
 	<style>
 		.line-legend {
 			position: absolute;
@@ -55,7 +56,7 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
 				<h1>NodeBB Package Manager Statistics</h1>
