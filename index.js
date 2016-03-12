@@ -2,6 +2,7 @@
 /* globals require */
 
 var express = require('express'),
+	bodyParser = require('body-parser'),
 	cronJob = require('cron').CronJob,
 	winston = require('winston'),
 	templates = require('templates.js'),
@@ -20,6 +21,7 @@ if (!requiredEnv.every(function(key) {
 	return process.exit(1);
 }
 
+app.use(bodyParser.json())
 require('./lib/routes')(app, controllers);
 
 winston.remove(winston.transports.Console);
