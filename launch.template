@@ -10,6 +10,8 @@ export GITHUB_USER_AGENT=
 # ===================
 
 export REDISDB=
+export REDISCLOUD_URL=
+export PORT=
 
 # "seq" is the revision number from npm. nbbpm uses it to keep itself up to
 # date, and stores this value in the local redis database. If it is not present

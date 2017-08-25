@@ -14,8 +14,19 @@ var express = require('express'),
 
 	requiredEnv = ['GITHUB_TOKEN', 'GITHUB_USER_AGENT'];
 
+var nconf = require('nconf');
+var path = require('path');
+
+nconf.file({
+	file: path.join(__dirname, '/config.json'),
+});
+
 if (!requiredEnv.every(function(key) {
-	return process.env.hasOwnProperty(key);
+	if (process.env.hasOwnProperty(key)) {
+		nconf.set(key, process.env[key]);
+	}
+
+	return !!nconf.get(key);
 })) {
 	winston.error('[init] Required environment variables not found, please consult launch.template file');
 	return process.exit(1);
@@ -42,7 +53,7 @@ app.set('view engine', 'tpl');
 app.set('views', 'views');
 app.enable('trust proxy');
 
-app.listen(process.env.PORT || 3000);
+app.listen(nconf.get('PORT') || 3000);
 
 winston.info('NodeBB Package Manager - Ready');
 
