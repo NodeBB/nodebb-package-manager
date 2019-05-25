@@ -32,6 +32,7 @@ if (!requiredEnv.every(function(key) {
 	return process.exit(1);
 }
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 require('./lib/routes')(app, controllers);
 
