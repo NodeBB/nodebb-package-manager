@@ -32,6 +32,7 @@ if (!requiredEnv.every(function(key) {
 	return process.exit(1);
 }
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 require('./lib/routes')(app, controllers);
 
@@ -44,6 +45,8 @@ winston.add(winston.transports.Console, {
 winston.info('NodeBB Package Manager - Initializing');
 
 new cronJob('*/15 * * * *', packages.registry.sync, null, true);
+new cronJob('0 0 * * *', packages.cleanUpUsage, null, true);
+
 
 analytics.init();
 
