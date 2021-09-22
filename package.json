@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/designcreateplay/nodebb-package-manager"
+    "url": "https://github.com/nodebb/nodebb-package-manager"
   },
   "keywords": [
     "nodebb",
@@ -20,9 +20,9 @@
   "author": "psychobunny",
   "license": "GPLv3",
   "bugs": {
-    "url": "https://github.com/designcreateplay/nodebb-package-manager/issues"
+    "url": "https://github.com/nodebb/nodebb-package-manager/issues"
   },
-  "homepage": "https://github.com/designcreateplay/nodebb-package-manager",
+  "homepage": "https://packages.nodebb.org",
   "dependencies": {
     "async": "^0.6.2",
     "body-parser": "^1.15.0",
@@ -30,12 +30,12 @@
     "cron": "^1.0.6",
     "csurf": "^1.6.2",
     "express": "^4.10.0",
-    "geoip-lite": "1.1.6",
+    "geoip-lite": "^1.4.2",
     "lru-cache": "^2.5.0",
-    "nconf": "^0.6.9",
+    "nconf": "^0.11.3",
     "node-fetch": "^2",
     "redis": "^0.10.1",
-    "request": "http://registry.npmjs.com/request/-/request-2.34.0.tgz",
+    "request": "^2.88.2",
     "semver": "^5.1.0",
     "templates.js": "^0.3.0",
     "winston": "^0.9.0"
