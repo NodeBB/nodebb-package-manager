@@ -33,6 +33,7 @@
     "geoip-lite": "1.1.6",
     "lru-cache": "^2.5.0",
     "nconf": "^0.6.9",
+    "node-fetch": "^2",
     "redis": "^0.10.1",
     "request": "http://registry.npmjs.com/request/-/request-2.34.0.tgz",
     "semver": "^5.1.0",
