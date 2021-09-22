@@ -4,6 +4,7 @@ export NODE_ENV=development
 
 export GITHUB_TOKEN=
 export GITHUB_USER_AGENT=
+export GITHUB_SECRET=
 
 # ===================
 # VALUES BELOW THIS LINE ARE OPTIONAL
