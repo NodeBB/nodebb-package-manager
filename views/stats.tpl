@@ -175,7 +175,7 @@
 		// Figure 1
 		$.ajax({
 			url: '/api/v1/analytics/index'
-		}).success(function(data) {
+		}).done(function(data) {
 			data[0].fillColor = "rgba(220,220,220,0.2)";
 			data[0].strokeColor = "rgba(220,220,220,1)";
 			data[0].pointColor = "rgba(220,220,220,1)";
@@ -209,7 +209,7 @@
 		// Figure 2
 		$.ajax({
 			url: '/api/v1/analytics/top/week'
-		}).success(function(data) {
+		}).done(function(data) {
 			var colours = ['#F44336', '#2196F3', '#4CAF50', '#ffc107', '#e91e63'],
 				highlights = ['#EF5350', '#42A5F5', '#66BB6A', '#ffca28', '#ec407a'];
 
@@ -226,7 +226,7 @@
 		// Figure 3
 		$.ajax({
 			url: '/api/v1/analytics/top/all'
-		}).success(function(data) {
+		}).done(function(data) {
 			var colours = ['#F44336', '#2196F3', '#4CAF50', '#ffc107', '#e91e63', '#9C27B0', '#009688', '#CDDC39', '#795548', '#3F51B5'],
 				highlights = ['#EF5350', '#42A5F5', '#66BB6A', '#ffca28', '#ec407a', '#AB47BC', '#26A69A', '#D4E157', '#8D6E63', '#5C6BC0'];
 
