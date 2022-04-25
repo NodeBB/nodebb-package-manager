@@ -24,7 +24,7 @@
   },
   "homepage": "https://packages.nodebb.org",
   "dependencies": {
-    "async": "^0.6.2",
+    "async": "^2.6.4",
     "body-parser": "^1.15.0",
     "compression": "^1.2.0",
     "cron": "^1.0.6",
