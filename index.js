@@ -45,7 +45,7 @@ winston.add(winston.transports.Console, {
 
 winston.info('NodeBB Package Manager - Initializing');
 
-new cronJob('*/15 * * * *', packages.registry.sync, null, true);
+new cronJob('*/30 * * * *', packages.registry.sync, null, true);
 new cronJob('0 0 * * *', packages.cleanUpUsage, null, true);
 
 
