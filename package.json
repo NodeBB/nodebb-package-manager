@@ -37,7 +37,7 @@
     "redis": "^0.10.1",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
-    "semver": "^5.1.0",
+    "semver": "^7.5.2",
     "templates.js": "^0.3.0",
     "winston": "^0.9.0"
   },
