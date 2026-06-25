@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cronJob = require('cron').CronJob;
 const winston = require('winston');
 const templates = require('templates.js');
+const crypto = require('crypto');
 const path = require('path');
 
 const nconf = require('nconf');
@@ -20,7 +21,7 @@ const packages = require('./lib/packages');
 const analytics = require('./lib/analytics');
 const controllers = require('./lib/controllers');
 
-const requiredEnv = ['GITHUB_TOKEN', 'GITHUB_USER_AGENT'];
+const requiredEnv = ['GITHUB_TOKEN', 'GITHUB_USER_AGENT', 'SECRET'];
 
 if (!requiredEnv.every((key) => {
 	if (process.env.hasOwnProperty(key)) {
@@ -34,7 +35,15 @@ if (!requiredEnv.every((key) => {
 }
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({
+	verify: function (req, res, buf) {
+		const hash = crypto.createHmac('sha1', process.env.SECRET);
+		hash.update(buf);
+		const digest = hash.digest('hex');
+
+		res.locals.verified = String(`sha1=${digest}`) === req.headers['x-hub-signature'];
+	},
+}));
 require('./lib/routes')(app, controllers);
 
 winston.remove(winston.transports.Console);
