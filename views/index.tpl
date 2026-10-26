@@ -47,7 +47,7 @@
 					<a href="{../url}" class="list-group-item">
 						<h4 class="list-group-item-heading mb-0">
 							<span class="fw-semibold">{../name}</span>
-							<span class="label label-success pull-right text-md">{./latest}</span>
+							<span class="label label-success pull-right text-md">{../latest}</span>
 							<span class="label label-info pull-right text-md">{../numInstalls} installs</span>
 						</h4>
 						<p class="list-group-item-text mb-xs text-md mb-2">{../description}</p>
