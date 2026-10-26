@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="/public/bootswatch-yeti.css" />
 	<style>
 		.mb-3 { margin-bottom: 1rem; }
+		.text-md { font-size: 1rem; }
 	</style>
 
 	<title>NodeBB Package Manager - Plugin List</title>
@@ -41,11 +42,11 @@
 					<!-- BEGIN packages -->
 					<a href="{../url}" class="list-group-item">
 						<h4 class="list-group-item-heading mb-0">
-							{../name}
-							<span class="badge pull-right">{../numInstalls} installs</span>
+							<strong>{../name}</strong>
+							<span class="badge pull-right text-md">{../numInstalls} installs</span>
 						</h4>
-						<p class="list-group-item-text mb-xs">{../description}</p>
-						<small class="text-muted">Last updated: {../updatedTime}</small>
+						<p class="list-group-item-text mb-xs text-md">{../description}</p>
+						<small class="text-muted text-md">Last updated: {../updatedTime}</small>
 					</a>
 					<!-- END packages -->
 				</div>
