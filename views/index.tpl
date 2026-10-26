@@ -39,10 +39,14 @@
 			<div class="col-xs-12 mb-3">
 				<div class="list-group">
 					<!-- BEGIN packages -->
-  					<a href="#" class="list-group-item">
-    					<h4 class="list-group-item-heading">{../name}</h4>
-    					<p class="list-group-item-text">{../description}</p>
-  					</a>
+					<a href="{../url}" class="list-group-item">
+						<h4 class="list-group-item-heading mb-0">
+							{../name}
+							<span class="badge pull-right">{../numInstalls} installs</span>
+						</h4>
+						<p class="list-group-item-text mb-xs">{../description}</p>
+						<small class="text-muted">Last updated: {../updatedTime}</small>
+					</a>
 					<!-- END packages -->
 				</div>
 			</div>
