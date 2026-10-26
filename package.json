@@ -4,7 +4,8 @@
   "description": "Package manager for NodeBB themes and plugins",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node index.js"
+    "dev": "NODE_ENV=development node index.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
