@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="/public/bootswatch-yeti.css" />
 	<style>
-
+		.mb-3 { margin-bottom: 1rem; }
 	</style>
 
 	<title>NodeBB Package Manager - Plugin List</title>
@@ -26,7 +26,7 @@
 				</p>
 			</div>
 
-			<div class="col-xs-12">
+			<div class="col-xs-12 mb-3">
 				<select class="form-control" id="version-select">
 					<!-- BEGIN versions -->
 					<option value="{../version}" <!-- IF ../selected -->selected<!-- ENDIF ../selected -->>
@@ -36,7 +36,7 @@
 				</select>
 			</div>
 
-			<div class="col-xs-12">
+			<div class="col-xs-12 mb-3">
 				<div class="list-group">
 					<!-- BEGIN packages -->
   					<a href="#" class="list-group-item">
