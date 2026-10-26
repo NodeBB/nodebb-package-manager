@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="col-xs-12 mb-3">
-				<label for="version-select">Select your NodeBB Version:</label>
+				<label for="version-select text-md">Select your NodeBB Version:</label>
 				<select class="form-control" id="version-select">
 					<!-- BEGIN versions -->
 					<option value="{../version}" <!-- IF ../selected -->selected<!-- ENDIF ../selected -->>
@@ -47,7 +47,8 @@
 					<a href="{../url}" class="list-group-item">
 						<h4 class="list-group-item-heading mb-0">
 							<span class="fw-semibold">{../name}</span>
-							<span class="badge pull-right text-md">{../numInstalls} installs</span>
+							<span class="label label-success pull-right text-md">{./latest}</span>
+							<span class="label label-info pull-right text-md">{../numInstalls} installs</span>
 						</h4>
 						<p class="list-group-item-text mb-xs text-md mb-2">{../description}</p>
 						<span class="text-muted text-sm">Last updated: {../updatedTime}</span>
