@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="col-xs-12 mb-3">
-				<label for="version-select text-md">Select your NodeBB Version:</label>
+				<label for="version-select" class="text-md">Select your NodeBB Version:</label>
 				<select class="form-control" id="version-select">
 					<!-- BEGIN versions -->
 					<option value="{../version}" <!-- IF ../selected -->selected<!-- ENDIF ../selected -->>
